@@ -33,7 +33,7 @@ A client library to the [Etsy API](http://developer.etsy.com/) for [Node.js](htt
 		request_token, // get the request token stored earlier
 		oauth_verifier, // get the verifier you got at http://www.example.com/verify
 		function(err, token) {
-			api.updateListing({ renew: true }, token, function(err, listing) {
+			api.updateListing({ listing_id: foo, renew: true }, token, function(err, listing) {
 				console.log(listing.results[0]);
 			});
 		}
