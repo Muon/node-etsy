@@ -1,0 +1,23 @@
+{
+  "name": "etsy",
+  "description": "Asynchronous Etsy API REST client.",
+  "keywords": ["etsy", "client"],
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Imperion/node-etsy.git"
+  },
+  "author": "Mak Naze\u010di\u0107-Andrlon <owlberteinstein@gmail.com>",
+  "main": "etsy",
+  "directories": {
+    "lib": "lib"
+  },
+  "engines": {
+    "node": "~0.2"
+  },
+  "dependencies": {
+    "oauth-client": "~0.1.5"
+  },
+  "main": "lib/etsy.js",
+  "homepage": "https://github.com/Imperion/node-etsy"
+}

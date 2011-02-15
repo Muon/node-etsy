@@ -1,0 +1,1859 @@
+{
+   "params" : null,
+   "count" : 115,
+   "type" : "ApiMethod",
+   "results" : [
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getMethodTable",
+         "description" : "Get a list of all methods available.",
+         "uri" : "/",
+         "params" : null,
+         "type" : "ApiMethod",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getCategory",
+         "description" : "Retrieves a top-level Category by tag.",
+         "uri" : "/categories/:tag",
+         "params" : {
+            "tag" : "string"
+         },
+         "type" : "Category",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getSubCategory",
+         "description" : "Retrieves a second-level Category by tag and subtag.",
+         "uri" : "/categories/:tag/:subtag",
+         "params" : {
+            "subtag" : "string",
+            "tag" : "string"
+         },
+         "type" : "Category",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getSubSubCategory",
+         "description" : "Retrieves a third-level Category by tag, subtag and subsubtag.",
+         "uri" : "/categories/:tag/:subtag/:subsubtag",
+         "params" : {
+            "subsubtag" : "string",
+            "subtag" : "string",
+            "tag" : "string"
+         },
+         "type" : "Category",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "findAllCountry",
+         "description" : "Finds all Country.",
+         "uri" : "/countries",
+         "params" : null,
+         "type" : "Country",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getCountry",
+         "description" : "Retrieves a Country by id.",
+         "uri" : "/countries/:country_id",
+         "params" : {
+            "country_id" : "array(int)"
+         },
+         "type" : "Country",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllFeaturedUsers",
+         "description" : "Finds all FeaturedUser.",
+         "uri" : "/featured/users",
+         "params" : {
+            "limit" : "int",
+            "offset" : "int"
+         },
+         "type" : "FeaturedUser",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getFeaturedUser",
+         "description" : "Retrieves a FeaturedUser by id.",
+         "uri" : "/featured/users/:featured_user_id",
+         "params" : {
+            "featured_user_id" : "array(int)"
+         },
+         "type" : "FeaturedUser",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllFeaturedListing",
+         "description" : "Finds all FeaturedListings regardless of Listing state",
+         "uri" : "/homepages/listings/",
+         "params" : {
+            "limit" : "int",
+            "offset" : "int"
+         },
+         "type" : "FeaturedListing",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getFeaturedListing",
+         "description" : "Retrieves a FeaturedListing by id.",
+         "uri" : "/homepages/listings/:featured_listing_id",
+         "params" : {
+            "featured_listing_id" : "array(int)"
+         },
+         "type" : "FeaturedListing",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getFeaturedListingListing",
+         "description" : "Retrieves a set of Listing objects associated to a FeaturedListing.",
+         "uri" : "/homepages/listings/:featured_listing_id/listing",
+         "params" : {
+            "featured_listing_id" : "int"
+         },
+         "type" : "Listing",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getFeaturedListingAssociatedPicker",
+         "description" : "Retrieves a set of FeaturedListingPicker objects associated to a FeaturedListing.",
+         "uri" : "/homepages/listings/:featured_listing_id/picker",
+         "params" : {
+            "featured_listing_id" : "int"
+         },
+         "type" : "FeaturedListingPicker",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllFeaturedListingActive",
+         "description" : "Finds all FeaturedListings that point to active Listings",
+         "uri" : "/homepages/listings/active",
+         "params" : {
+            "limit" : "int",
+            "offset" : "int"
+         },
+         "type" : "FeaturedListing",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllFeaturedListingPickerActive",
+         "description" : "Finds all FeaturedListingPicker in scope active.",
+         "uri" : "/homepages/pickers/",
+         "params" : {
+            "limit" : "int",
+            "offset" : "int"
+         },
+         "type" : "FeaturedListingPicker",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getFeaturedListingPicker",
+         "description" : "Retrieves a FeaturedListingPicker by id.",
+         "uri" : "/homepages/pickers/:featured_listing_picker_id",
+         "params" : {
+            "featured_listing_picker_id" : "array(int)"
+         },
+         "type" : "FeaturedListingPicker",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllFeaturedListingPickerFeatured",
+         "description" : "Retrieves a set of FeaturedListing objects associated to a FeaturedListingPicker.",
+         "uri" : "/homepages/pickers/:featured_listing_picker_id/featured",
+         "params" : {
+            "limit" : "int",
+            "featured_listing_picker_id" : "int",
+            "offset" : "int"
+         },
+         "type" : "FeaturedListing",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllFeaturedListingPickerListings",
+         "description" : "Retrieves a set of Listing objects associated to a FeaturedListingPicker.",
+         "uri" : "/homepages/pickers/:featured_listing_picker_id/listings",
+         "params" : {
+            "limit" : "int",
+            "featured_listing_picker_id" : "int",
+            "offset" : "int"
+         },
+         "type" : "Listing",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllFeaturedListingPickerListingsActive",
+         "description" : "Retrieves a set of Listing objects associated to a FeaturedListingPicker in scope active.",
+         "uri" : "/homepages/pickers/:featured_listing_picker_id/listings/active",
+         "params" : {
+            "limit" : "int",
+            "featured_listing_picker_id" : "int",
+            "offset" : "int"
+         },
+         "type" : "Listing",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "materials" : null,
+            "shop_section_id" : null
+         },
+         "name" : "createListing",
+         "description" : "Creates a new Listing",
+         "uri" : "/listings",
+         "params" : {
+            "shipping_template_id" : "int",
+            "quantity" : "int",
+            "description" : "text",
+            "shop_section_id" : "int",
+            "tags" : "array(string)",
+            "materials" : "array(string)",
+            "title" : "string",
+            "price" : "float"
+         },
+         "type" : "Listing",
+         "http_method" : "POST"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getListing",
+         "description" : "Retrieves a Listing by id.",
+         "uri" : "/listings/:listing_id",
+         "params" : {
+            "listing_id" : "array(int)"
+         },
+         "type" : "Listing",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "shipping_template_id" : null,
+            "quantity" : null,
+            "description" : null,
+            "state" : "active",
+            "shop_section_id" : null,
+            "tags" : null,
+            "renew" : null,
+            "materials" : null,
+            "title" : null,
+            "price" : null
+         },
+         "name" : "updateListing",
+         "description" : "Updates a Listing",
+         "uri" : "/listings/:listing_id",
+         "params" : {
+            "shipping_template_id" : "int",
+            "quantity" : "int",
+            "description" : "text",
+            "state" : "enum(active, inactive)",
+            "shop_section_id" : "int",
+            "tags" : "array(string)",
+            "renew" : "boolean",
+            "materials" : "array(string)",
+            "title" : "string",
+            "price" : "float",
+            "listing_id" : "int"
+         },
+         "type" : "Listing",
+         "http_method" : "PUT"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "deleteListing",
+         "description" : "Deletes a Listing",
+         "uri" : "/listings/:listing_id",
+         "params" : {
+            "listing_id" : "int"
+         },
+         "type" : "Listing",
+         "http_method" : "DELETE"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllListingFavoredBy",
+         "description" : "Retrieves a set of FavoriteListing objects associated to a Listing.",
+         "uri" : "/listings/:listing_id/favored-by",
+         "params" : {
+            "limit" : "int",
+            "offset" : "int",
+            "listing_id" : "int"
+         },
+         "type" : "FavoriteListing",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "findAllListingImages",
+         "description" : "Retrieves a set of ListingImage objects associated to a Listing.",
+         "uri" : "/listings/:listing_id/images",
+         "params" : {
+            "listing_id" : "int"
+         },
+         "type" : "ListingImage",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "uploadListingImage",
+         "description" : "Upload a new listing image",
+         "uri" : "/listings/:listing_id/images",
+         "params" : {
+            "image" : "image",
+            "listing_id" : "int"
+         },
+         "type" : "ListingImage",
+         "http_method" : "POST"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "listing_id" : null
+         },
+         "name" : "getListingImage",
+         "description" : "Retrieves a ListingImage by id.",
+         "uri" : "/listings/:listing_id/images/:listing_image_id",
+         "params" : {
+            "listing_image_id" : "array(int)",
+            "listing_id" : "int"
+         },
+         "type" : "ListingImage",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "deleteListingImage",
+         "description" : "Deletes a listing image",
+         "uri" : "/listings/:listing_id/images/:listing_image_id",
+         "params" : {
+            "listing_image_id" : "int",
+            "listing_id" : "int"
+         },
+         "type" : "ListingImage",
+         "http_method" : "DELETE"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getListingPaymentInfo",
+         "description" : "Retrieves a set of ListingPayment objects associated to a Listing.",
+         "uri" : "/listings/:listing_id/payments",
+         "params" : {
+            "listing_id" : "int"
+         },
+         "type" : "ListingPayment",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllListingShippingInfo",
+         "description" : "Retrieves a set of ShippingInfo objects associated to a Listing.",
+         "uri" : "/listings/:listing_id/shipping/info",
+         "params" : {
+            "limit" : "int",
+            "offset" : "int",
+            "listing_id" : "int"
+         },
+         "type" : "ShippingInfo",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "region_id" : null,
+            "destination_country_id" : null
+         },
+         "name" : "createShippingInfo",
+         "description" : "Creates a new ShippingInfo.",
+         "uri" : "/listings/:listing_id/shipping/info",
+         "params" : {
+            "region_id" : "int",
+            "secondary_cost" : "float",
+            "primary_cost" : "float",
+            "destination_country_id" : "int",
+            "origin_country_id" : "int",
+            "listing_id" : "int"
+         },
+         "type" : "ShippingInfo",
+         "http_method" : "POST"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "location" : null,
+            "sort_order" : "down",
+            "lat" : null,
+            "min_price" : null,
+            "tags" : null,
+            "keywords" : null,
+            "max_price" : null,
+            "color" : null,
+            "materials" : null,
+            "sort_on" : "created",
+            "color_accuracy" : 0,
+            "geo_level" : "city",
+            "lon" : null,
+            "category" : null,
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllListingActive",
+         "description" : "Finds all active Listing",
+         "uri" : "/listings/active",
+         "params" : {
+            "location" : "string",
+            "sort_order" : "enum(up, down)",
+            "lat" : "latitude",
+            "min_price" : "float",
+            "tags" : "array(string)",
+            "keywords" : "string",
+            "max_price" : "float",
+            "color" : "color_triplet",
+            "materials" : "array(string)",
+            "sort_on" : "enum(created, price, score)",
+            "color_accuracy" : "color_wiggle",
+            "geo_level" : "enum(city, state, country)",
+            "lon" : "longitude",
+            "category" : "category",
+            "limit" : "int",
+            "offset" : "int"
+         },
+         "type" : "Listing",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "getOrder",
+         "description" : "Retrieves a Order by id.",
+         "uri" : "/orders/:order_id",
+         "params" : {
+            "order_id" : "array(int)"
+         },
+         "type" : "Order",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllOrderReceipts",
+         "description" : "Retrieves a set of Receipt objects associated to a Order.",
+         "uri" : "/orders/:order_id/receipts",
+         "params" : {
+            "order_id" : "int",
+            "limit" : "int",
+            "offset" : "int"
+         },
+         "type" : "Receipt",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getListingPayment",
+         "description" : "Retrieves a ListingPayment by id.",
+         "uri" : "/payments/:listing_payment_id",
+         "params" : {
+            "listing_payment_id" : "array(int)"
+         },
+         "type" : "ListingPayment",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "paypal_email" : null,
+            "first_line" : null,
+            "allow_other" : null,
+            "name" : null,
+            "state" : null,
+            "allow_paypal" : null,
+            "allow_check" : null,
+            "allow_mo" : null,
+            "zip" : null,
+            "city" : null,
+            "country_id" : null,
+            "second_line" : null
+         },
+         "name" : "createPaymentTemplate",
+         "description" : "Creates a new PaymentTemplate",
+         "uri" : "/payments/templates",
+         "params" : {
+            "paypal_email" : "string",
+            "first_line" : "string",
+            "allow_other" : "boolean",
+            "name" : "string",
+            "state" : "string",
+            "allow_paypal" : "boolean",
+            "allow_check" : "boolean",
+            "allow_mo" : "boolean",
+            "zip" : "string",
+            "city" : "string",
+            "country_id" : "int",
+            "second_line" : "string"
+         },
+         "type" : "PaymentTemplate",
+         "http_method" : "POST"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "getPaymentTemplate",
+         "description" : "Retrieves a PaymentTemplate by id.",
+         "uri" : "/payments/templates/:payment_template_id",
+         "params" : {
+            "payment_template_id" : "array(int)"
+         },
+         "type" : "PaymentTemplate",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "paypal_email" : null,
+            "first_line" : null,
+            "allow_other" : null,
+            "name" : null,
+            "state" : null,
+            "allow_paypal" : null,
+            "allow_check" : null,
+            "allow_mo" : null,
+            "zip" : null,
+            "city" : null,
+            "country_id" : null,
+            "second_line" : null
+         },
+         "name" : "updatePaymentTemplate",
+         "description" : "Updates a PaymentTemplate",
+         "uri" : "/payments/templates/:payment_template_id",
+         "params" : {
+            "paypal_email" : "string",
+            "first_line" : "string",
+            "allow_other" : "boolean",
+            "name" : "string",
+            "state" : "string",
+            "allow_paypal" : "boolean",
+            "allow_check" : "boolean",
+            "allow_mo" : "boolean",
+            "zip" : "string",
+            "city" : "string",
+            "country_id" : "int",
+            "payment_template_id" : "int",
+            "second_line" : "string"
+         },
+         "type" : "PaymentTemplate",
+         "http_method" : "PUT"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "getReceipt",
+         "description" : "Retrieves a Receipt by id.",
+         "uri" : "/receipts/:receipt_id",
+         "params" : {
+            "receipt_id" : "array(int)"
+         },
+         "type" : "Receipt",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "message_from_seller" : null,
+            "message_from_buyer" : null,
+            "was_paid" : null,
+            "was_shipped" : null
+         },
+         "name" : "updateReceipt",
+         "description" : "Updates a Receipt",
+         "uri" : "/receipts/:receipt_id",
+         "params" : {
+            "message_from_seller" : "string",
+            "message_from_buyer" : "string",
+            "was_paid" : "boolean",
+            "was_shipped" : "boolean",
+            "receipt_id" : "int"
+         },
+         "type" : "Receipt",
+         "http_method" : "PUT"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllReceiptTransactions",
+         "description" : "Retrieves a set of Transaction objects associated to a Receipt.",
+         "uri" : "/receipts/:receipt_id/transactions",
+         "params" : {
+            "limit" : "int",
+            "receipt_id" : "int",
+            "offset" : "int"
+         },
+         "type" : "Transaction",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "findAllRegion",
+         "description" : "Finds all Region.",
+         "uri" : "/regions",
+         "params" : null,
+         "type" : "Region",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getRegion",
+         "description" : "Retrieves a Region by id.",
+         "uri" : "/regions/:region_id",
+         "params" : {
+            "region_id" : "array(int)"
+         },
+         "type" : "Region",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "user_id" : null,
+            "title" : null,
+            "active_listing_count" : null,
+            "rank" : null
+         },
+         "name" : "createShopSection",
+         "description" : "Creates a new ShopSection.",
+         "uri" : "/sections",
+         "params" : {
+            "user_id" : "int",
+            "title" : "text"
+         },
+         "type" : "ShopSection",
+         "http_method" : "POST"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getShopSection",
+         "description" : "Retrieves a ShopSection by id.",
+         "uri" : "/sections/:shop_section_id",
+         "params" : {
+            "shop_section_id" : "array(int)"
+         },
+         "type" : "ShopSection",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "user_id" : null,
+            "title" : null,
+            "active_listing_count" : null,
+            "rank" : null
+         },
+         "name" : "updateShopSection",
+         "description" : "Updates a ShopSection with the given id.",
+         "uri" : "/sections/:shop_section_id",
+         "params" : {
+            "user_id" : "int",
+            "title" : "text",
+            "rank" : "int",
+            "shop_section_id" : "int"
+         },
+         "type" : "ShopSection",
+         "http_method" : "PUT"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "deleteShopSection",
+         "description" : "Deletes the ShopSection with the given id.",
+         "uri" : "/sections/:shop_section_id",
+         "params" : {
+            "shop_section_id" : "int"
+         },
+         "type" : "ShopSection",
+         "http_method" : "DELETE"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getServerEpoch",
+         "description" : "Get server time, in epoch seconds notation.",
+         "uri" : "/server/epoch",
+         "params" : null,
+         "type" : "Int",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "ping",
+         "description" : "Check that the server is alive.",
+         "uri" : "/server/ping",
+         "params" : null,
+         "type" : "String",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getShippingInfo",
+         "description" : "Retrieves a ShippingInfo by id.",
+         "uri" : "/shipping/info/:shipping_info_id",
+         "params" : {
+            "shipping_info_id" : "array(int)"
+         },
+         "type" : "ShippingInfo",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "region_id" : null,
+            "secondary_cost" : null,
+            "primary_cost" : null,
+            "currency_code" : null,
+            "destination_country_id" : null,
+            "origin_country_id" : null,
+            "listing_id" : null
+         },
+         "name" : "updateShippingInfo",
+         "description" : "Updates a ShippingInfo with the given id.",
+         "uri" : "/shipping/info/:shipping_info_id",
+         "params" : {
+            "region_id" : "int",
+            "secondary_cost" : "float",
+            "primary_cost" : "float",
+            "destination_country_id" : "int",
+            "shipping_info_id" : "int",
+            "origin_country_id" : "int",
+            "listing_id" : "int"
+         },
+         "type" : "ShippingInfo",
+         "http_method" : "PUT"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "deleteShippingInfo",
+         "description" : "Deletes the ShippingInfo with the given id.",
+         "uri" : "/shipping/info/:shipping_info_id",
+         "params" : {
+            "shipping_info_id" : "int"
+         },
+         "type" : "ShippingInfo",
+         "http_method" : "DELETE"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "destination_country_id" : null,
+            "destination_region_id" : null
+         },
+         "name" : "createShippingTemplate",
+         "description" : "Creates a new ShippingTemplate",
+         "uri" : "/shipping/templates",
+         "params" : {
+            "secondary_cost" : "float",
+            "primary_cost" : "float",
+            "destination_country_id" : "int",
+            "destination_region_id" : "int",
+            "origin_country_id" : "int",
+            "title" : "string"
+         },
+         "type" : "ShippingTemplate",
+         "http_method" : "POST"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getShippingTemplate",
+         "description" : "Retrieves a ShippingTemplate by id.",
+         "uri" : "/shipping/templates/:shipping_template_id",
+         "params" : {
+            "shipping_template_id" : "array(int)"
+         },
+         "type" : "ShippingTemplate",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "origin_country_id" : null,
+            "title" : null
+         },
+         "name" : "updateShippingTemplate",
+         "description" : "Updates a ShippingTemplate",
+         "uri" : "/shipping/templates/:shipping_template_id",
+         "params" : {
+            "shipping_template_id" : "int",
+            "origin_country_id" : "int",
+            "title" : "string"
+         },
+         "type" : "ShippingTemplate",
+         "http_method" : "PUT"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "deleteShippingTemplate",
+         "description" : "Deletes the ShippingTemplate with the given id.",
+         "uri" : "/shipping/templates/:shipping_template_id",
+         "params" : {
+            "shipping_template_id" : "int"
+         },
+         "type" : "ShippingTemplate",
+         "http_method" : "DELETE"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllShippingTemplateEntries",
+         "description" : "Retrieves a set of ShippingTemplateEntry objects associated to a ShippingTemplate.",
+         "uri" : "/shipping/templates/:shipping_template_id/entries",
+         "params" : {
+            "shipping_template_id" : "int",
+            "limit" : "int",
+            "offset" : "int"
+         },
+         "type" : "ShippingTemplateEntry",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "destination_country_id" : null,
+            "destination_region_id" : null
+         },
+         "name" : "createShippingTemplateEntry",
+         "description" : "Creates a new ShippingTemplateEntry",
+         "uri" : "/shipping/templates/entries",
+         "params" : {
+            "secondary_cost" : "float",
+            "primary_cost" : "float",
+            "destination_country_id" : "int",
+            "destination_region_id" : "int",
+            "shipping_template_id" : "int"
+         },
+         "type" : "ShippingTemplateEntry",
+         "http_method" : "POST"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getShippingTemplateEntry",
+         "description" : "Retrieves a ShippingTemplateEntry by id.",
+         "uri" : "/shipping/templates/entries/:shipping_template_entry_id",
+         "params" : {
+            "shipping_template_entry_id" : "array(int)"
+         },
+         "type" : "ShippingTemplateEntry",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "secondary_cost" : null,
+            "primary_cost" : null,
+            "destination_country_id" : null
+         },
+         "name" : "updateShippingTemplateEntry",
+         "description" : "Updates a ShippingTemplateEntry",
+         "uri" : "/shipping/templates/entries/:shipping_template_entry_id",
+         "params" : {
+            "shipping_template_entry_id" : "int",
+            "secondary_cost" : "float",
+            "primary_cost" : "float",
+            "destination_country_id" : "int"
+         },
+         "type" : "ShippingTemplateEntry",
+         "http_method" : "PUT"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "deleteShippingTemplateEntry",
+         "description" : "Deletes a ShippingTemplateEntry",
+         "uri" : "/shipping/templates/entries/:shipping_template_entry_id",
+         "params" : {
+            "shipping_template_entry_id" : "int"
+         },
+         "type" : "ShippingTemplateEntry",
+         "http_method" : "DELETE"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25,
+            "shop_name" : null,
+            "offset" : 0
+         },
+         "name" : "findAllShops",
+         "description" : "Finds all Shops.  If there is a keywords parameter, finds shops with shop_name starting with keywords.",
+         "uri" : "/shops",
+         "params" : {
+            "limit" : "int",
+            "shop_name" : "string (length >= 3)",
+            "offset" : "int"
+         },
+         "type" : "Shop",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getShop",
+         "description" : "Retrieves a Shop by id.",
+         "uri" : "/shops/:shop_id",
+         "params" : {
+            "shop_id" : "array(shop_id_or_name)"
+         },
+         "type" : "Shop",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "sale_message" : null,
+            "policy_refunds" : null,
+            "policy_additional" : null,
+            "policy_shipping" : null,
+            "policy_payment" : null,
+            "policy_welcome" : null,
+            "title" : null,
+            "announcement" : null,
+            "alchemy_message" : null,
+            "is_refusing_alchemy" : null
+         },
+         "name" : "updateShop",
+         "description" : "Updates a Shop",
+         "uri" : "/shops/:shop_id",
+         "params" : {
+            "shop_id" : "int",
+            "sale_message" : "string",
+            "policy_refunds" : "string",
+            "policy_additional" : "string",
+            "policy_shipping" : "string",
+            "policy_payment" : "string",
+            "policy_welcome" : "string",
+            "title" : "string",
+            "announcement" : "string",
+            "alchemy_message" : "string",
+            "is_refusing_alchemy" : "boolean"
+         },
+         "type" : "Shop",
+         "http_method" : "PUT"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "uploadShopBanner",
+         "description" : "Upload a new shop banner image",
+         "uri" : "/shops/:shop_id/appearance/banner",
+         "params" : {
+            "shop_id" : "shop_id_or_name",
+            "image" : "image"
+         },
+         "type" : "ShopBanner",
+         "http_method" : "POST"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "deleteShopBanner",
+         "description" : "Deletes a shop banner image",
+         "uri" : "/shops/:shop_id/appearance/banner/:shop_banner_id",
+         "params" : {
+            "shop_banner_id" : "int",
+            "shop_id" : "shop_id_or_name"
+         },
+         "type" : "ShopBanner",
+         "http_method" : "DELETE"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "sort_order" : "down",
+            "min_price" : null,
+            "tags" : null,
+            "keywords" : null,
+            "max_price" : null,
+            "color" : null,
+            "materials" : null,
+            "sort_on" : "created",
+            "color_accuracy" : 0,
+            "category" : null,
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllShopListingsActive",
+         "description" : "Finds all active Listings associated with a Shop",
+         "uri" : "/shops/:shop_id/listings/active",
+         "params" : {
+            "sort_order" : "enum(up, down)",
+            "shop_id" : "shop_id_or_name",
+            "min_price" : "float",
+            "tags" : "array(string)",
+            "keywords" : "string",
+            "max_price" : "float",
+            "color" : "color_triplet",
+            "materials" : "array(string)",
+            "sort_on" : "enum(created, price, score)",
+            "color_accuracy" : "color_wiggle",
+            "category" : "category",
+            "limit" : "int",
+            "offset" : "int"
+         },
+         "type" : "Listing",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllShopListingsExpired",
+         "description" : "Retrieves Listings associated to a Shop that are expired",
+         "uri" : "/shops/:shop_id/listings/expired",
+         "params" : {
+            "shop_id" : "shop_id_or_name",
+            "limit" : "int",
+            "offset" : "int"
+         },
+         "type" : "Listing",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "getShopListingExpired",
+         "description" : "Retrieves a Listing associated to a Shop that is inactive",
+         "uri" : "/shops/:shop_id/listings/expired/:listing_id",
+         "params" : {
+            "shop_id" : "shop_id_or_name",
+            "listing_id" : "int"
+         },
+         "type" : "Listing",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllShopListingsFeatured",
+         "description" : "Retrieves Listings associated to a Shop that are featured",
+         "uri" : "/shops/:shop_id/listings/featured",
+         "params" : {
+            "shop_id" : "shop_id_or_name",
+            "limit" : "int",
+            "offset" : "int"
+         },
+         "type" : "Listing",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllShopListingsInactive",
+         "description" : "Retrieves Listings associated to a Shop that are inactive",
+         "uri" : "/shops/:shop_id/listings/inactive",
+         "params" : {
+            "shop_id" : "shop_id_or_name",
+            "limit" : "int",
+            "offset" : "int"
+         },
+         "type" : "Listing",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "getShopListingInactive",
+         "description" : "Retrieves a Listing associated to a Shop that is inactive",
+         "uri" : "/shops/:shop_id/listings/inactive/:listing_id",
+         "params" : {
+            "shop_id" : "shop_id_or_name",
+            "listing_id" : "int"
+         },
+         "type" : "Listing",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllShopReceipts",
+         "description" : "Retrieves a set of Receipt objects associated to a Shop.",
+         "uri" : "/shops/:shop_id/receipts",
+         "params" : {
+            "shop_id" : "shop_id_or_name",
+            "limit" : "int",
+            "offset" : "int"
+         },
+         "type" : "Receipt",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "findAllShopSections",
+         "description" : "Retrieves a set of ShopSection objects associated to a Shop.",
+         "uri" : "/shops/:shop_id/sections",
+         "params" : {
+            "shop_id" : "shop_id_or_name"
+         },
+         "type" : "ShopSection",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllShopTransactions",
+         "description" : "Retrieves a set of Transaction objects associated to a Shop.",
+         "uri" : "/shops/:shop_id/transactions",
+         "params" : {
+            "shop_id" : "shop_id_or_name",
+            "limit" : "int",
+            "offset" : "int"
+         },
+         "type" : "Transaction",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "findAllTopCategory",
+         "description" : "Retrieves all top-level Categories.",
+         "uri" : "/taxonomy/categories",
+         "params" : null,
+         "type" : "Category",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "findAllTopCategoryChildren",
+         "description" : "Retrieves children of a top-level Category by tag.",
+         "uri" : "/taxonomy/categories/:tag",
+         "params" : {
+            "tag" : "string"
+         },
+         "type" : "Category",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "findAllSubCategoryChildren",
+         "description" : "Retrieves children of a second-level Category by tag and subtag.",
+         "uri" : "/taxonomy/categories/:tag/:subtag",
+         "params" : {
+            "subtag" : "string",
+            "tag" : "string"
+         },
+         "type" : "Category",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25
+         },
+         "name" : "findPopularTags",
+         "description" : "Retrieves all related tags for the given tag set.",
+         "uri" : "/taxonomy/tags",
+         "params" : {
+            "limit" : "int"
+         },
+         "type" : "Tag",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25
+         },
+         "name" : "findAllRelatedTags",
+         "description" : "Retrieves all related tags for the given tag set.",
+         "uri" : "/taxonomy/tags/:tags",
+         "params" : {
+            "limit" : "int",
+            "tags" : "array(string)"
+         },
+         "type" : "Tag",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "getTransaction",
+         "description" : "Retrieves a Transaction by id.",
+         "uri" : "/transactions/:transaction_id",
+         "params" : {
+            "transaction_id" : "array(int)"
+         },
+         "type" : "Transaction",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "keywords" : null,
+            "sort_order" : "down",
+            "sort_on" : "hotness",
+            "limit" : 25,
+            "maturity" : "safe_only",
+            "offset" : 0,
+            "detail_level" : "low"
+         },
+         "name" : "findAllTreasuries",
+         "description" : "Search Treasuries or else List all Treasuries",
+         "uri" : "/treasuries",
+         "params" : {
+            "keywords" : "treasury_search_string",
+            "sort_order" : "enum(up, down)",
+            "sort_on" : "enum(hotness, created)",
+            "limit" : "int",
+            "maturity" : "enum(safe_only, safe_and_mature)",
+            "offset" : "int",
+            "detail_level" : "enum(low, medium)"
+         },
+         "type" : "Treasury",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getTreasury",
+         "description" : "Get a Treasury",
+         "uri" : "/treasuries/:treasury_id",
+         "params" : {
+            "treasury_id" : "treasury_id"
+         },
+         "type" : "Treasury",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "getUser",
+         "description" : "Retrieves a User by id.",
+         "uri" : "/users/:user_id",
+         "params" : {
+            "user_id" : "array(user_id_or_name)"
+         },
+         "type" : "User",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllUserAddresses",
+         "description" : "Retrieves a set of UserAddress objects associated to a User.",
+         "uri" : "/users/:user_id/addresses",
+         "params" : {
+            "limit" : "int",
+            "user_id" : "user_id_or_name",
+            "offset" : "int"
+         },
+         "type" : "UserAddress",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "state" : null,
+            "second_line" : null
+         },
+         "name" : "createUserAddress",
+         "description" : "Creates a new UserAddress.",
+         "uri" : "/users/:user_id/addresses",
+         "params" : {
+            "zip" : "text",
+            "city" : "text",
+            "country_id" : "int",
+            "first_line" : "text",
+            "name" : "text",
+            "user_id" : "user_id_or_name",
+            "state" : "text",
+            "second_line" : "text"
+         },
+         "type" : "UserAddress",
+         "http_method" : "POST"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "getUserAddress",
+         "description" : "Retrieves a UserAddress by id.",
+         "uri" : "/users/:user_id/addresses/:user_address_id",
+         "params" : {
+            "user_address_id" : "array(int)"
+         },
+         "type" : "UserAddress",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "zip" : null,
+            "city" : null,
+            "country_id" : null,
+            "first_line" : null,
+            "name" : null,
+            "user_id" : null,
+            "state" : null,
+            "second_line" : null
+         },
+         "name" : "updateUserAddress",
+         "description" : "Updates a UserAddress with the given id.",
+         "uri" : "/users/:user_id/addresses/:user_address_id",
+         "params" : {
+            "user_address_id" : "int",
+            "zip" : "text",
+            "city" : "text",
+            "country_id" : "int",
+            "first_line" : "text",
+            "name" : "text",
+            "state" : "text",
+            "second_line" : "text"
+         },
+         "type" : "UserAddress",
+         "http_method" : "PUT"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "deleteUserAddress",
+         "description" : "Deletes the UserAddress with the given id.",
+         "uri" : "/users/:user_id/addresses/:user_address_id",
+         "params" : {
+            "user_address_id" : "int"
+         },
+         "type" : "UserAddress",
+         "http_method" : "DELETE"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "src" : null,
+            "user_id" : null,
+            "image" : null
+         },
+         "name" : "uploadAvatar",
+         "description" : "Upload a new user avatar image",
+         "uri" : "/users/:user_id/avatar",
+         "params" : {
+            "src" : "string",
+            "user_id" : "user_id_or_name",
+            "image" : "image"
+         },
+         "type" : "Avatar",
+         "http_method" : "POST"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "user_id" : null
+         },
+         "name" : "getAvatarImgSrc",
+         "description" : "Get avatar image source",
+         "uri" : "/users/:user_id/avatar/src",
+         "params" : {
+            "user_id" : "user_id_or_name"
+         },
+         "type" : "Avatar",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllUserCharges",
+         "description" : "Retrieves a set of BillCharge objects associated to a User.",
+         "uri" : "/users/:user_id/charges",
+         "params" : {
+            "limit" : "int",
+            "user_id" : "user_id_or_name",
+            "offset" : "int"
+         },
+         "type" : "BillCharge",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllUserFavoredBy",
+         "description" : "Retrieves a set of FavoriteUser objects associated to a User.",
+         "uri" : "/users/:user_id/favored-by",
+         "params" : {
+            "limit" : "int",
+            "user_id" : "user_id_or_name",
+            "offset" : "int"
+         },
+         "type" : "FavoriteUser",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllUserFavoriteListings",
+         "description" : "Finds all favorite listings for a user",
+         "uri" : "/users/:user_id/favorites/listings",
+         "params" : {
+            "limit" : "int",
+            "user_id" : "user_id_or_name",
+            "offset" : "int"
+         },
+         "type" : "FavoriteListing",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "findUserFavoriteListings",
+         "description" : "Finds a favorite listing for a user",
+         "uri" : "/users/:user_id/favorites/listings/:listing_id",
+         "params" : {
+            "user_id" : "user_id_or_name",
+            "listing_id" : "int"
+         },
+         "type" : "FavoriteListing",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "createUserFavoriteListings",
+         "description" : "Creates a new favorite listing for a user",
+         "uri" : "/users/:user_id/favorites/listings/:listing_id",
+         "params" : {
+            "user_id" : "user_id_or_name",
+            "listing_id" : "int"
+         },
+         "type" : "FavoriteListing",
+         "http_method" : "POST"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "deleteUserFavoriteListings",
+         "description" : "Delete a favorite listing for a user",
+         "uri" : "/users/:user_id/favorites/listings/:listing_id",
+         "params" : {
+            "user_id" : "user_id_or_name",
+            "listing_id" : "int"
+         },
+         "type" : "FavoriteListing",
+         "http_method" : "DELETE"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllUserFavoriteUsers",
+         "description" : "Finds all favorite users for a user",
+         "uri" : "/users/:user_id/favorites/users",
+         "params" : {
+            "limit" : "int",
+            "user_id" : "user_id_or_name",
+            "offset" : "int"
+         },
+         "type" : "FavoriteUser",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : null,
+         "name" : "findUserFavoriteUsers",
+         "description" : "Finds a favorite user for a user",
+         "uri" : "/users/:user_id/favorites/users/:target_user_id",
+         "params" : {
+            "target_user_id" : "user_id_or_name",
+            "user_id" : "user_id_or_name"
+         },
+         "type" : "FavoriteUser",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "createUserFavoriteUsers",
+         "description" : "Creates a new favorite listing for a user",
+         "uri" : "/users/:user_id/favorites/users/:target_user_id",
+         "params" : {
+            "target_user_id" : "user_id_or_name",
+            "user_id" : "user_id_or_name"
+         },
+         "type" : "FavoriteUser",
+         "http_method" : "POST"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "deleteUserFavoriteUsers",
+         "description" : "Delete a favorite listing for a user",
+         "uri" : "/users/:user_id/favorites/users/:target_user_id",
+         "params" : {
+            "target_user_id" : "user_id_or_name",
+            "user_id" : "user_id_or_name"
+         },
+         "type" : "FavoriteUser",
+         "http_method" : "DELETE"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllUserFeedbackAsAuthor",
+         "description" : "Retrieves a set of Feedback objects associated to a User.",
+         "uri" : "/users/:user_id/feedback/as-author",
+         "params" : {
+            "limit" : "int",
+            "user_id" : "user_id_or_name",
+            "offset" : "int"
+         },
+         "type" : "Feedback",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllUserFeedbackAsBuyer",
+         "description" : "Retrieves a set of Feedback objects associated to a User.",
+         "uri" : "/users/:user_id/feedback/as-buyer",
+         "params" : {
+            "limit" : "int",
+            "user_id" : "user_id_or_name",
+            "offset" : "int"
+         },
+         "type" : "Feedback",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllUserFeedbackAsSeller",
+         "description" : "Retrieves a set of Feedback objects associated to a User.",
+         "uri" : "/users/:user_id/feedback/as-seller",
+         "params" : {
+            "limit" : "int",
+            "user_id" : "user_id_or_name",
+            "offset" : "int"
+         },
+         "type" : "Feedback",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllUserFeedbackAsSubject",
+         "description" : "Retrieves a set of Feedback objects associated to a User.",
+         "uri" : "/users/:user_id/feedback/as-subject",
+         "params" : {
+            "limit" : "int",
+            "user_id" : "user_id_or_name",
+            "offset" : "int"
+         },
+         "type" : "Feedback",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllUserOrders",
+         "description" : "Retrieves a set of Order objects associated to a User.",
+         "uri" : "/users/:user_id/orders",
+         "params" : {
+            "limit" : "int",
+            "user_id" : "user_id_or_name",
+            "offset" : "int"
+         },
+         "type" : "Order",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllUserPayments",
+         "description" : "Retrieves a set of BillPayment objects associated to a User.",
+         "uri" : "/users/:user_id/payments",
+         "params" : {
+            "limit" : "int",
+            "user_id" : "user_id_or_name",
+            "offset" : "int"
+         },
+         "type" : "BillPayment",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "findAllUserPaymentTemplates",
+         "description" : "Retrieves a set of PaymentTemplate objects associated to a User.",
+         "uri" : "/users/:user_id/payments/templates",
+         "params" : {
+            "user_id" : "user_id_or_name"
+         },
+         "type" : "PaymentTemplate",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllUserBuyerReceipts",
+         "description" : "Retrieves a set of Receipt objects associated to a User.",
+         "uri" : "/users/:user_id/receipts",
+         "params" : {
+            "limit" : "int",
+            "user_id" : "user_id_or_name",
+            "offset" : "int"
+         },
+         "type" : "Receipt",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "excluded_listing_ids" : null,
+            "limit" : 25
+         },
+         "name" : "getRecommendedListings",
+         "description" : "Get recommended listings for an authenticated member. The number of listings returned may not match the specified limit if there is no activity from recommended shops.",
+         "uri" : "/users/:user_id/recommended_listings",
+         "params" : {
+            "excluded_listing_ids" : "array(int)",
+            "limit" : "int",
+            "user_id" : "user_id_or_name"
+         },
+         "type" : "Listing",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "registerRecommendedListingRejects",
+         "description" : "Registers rejections of recommended listings. Affects future recommended listings.",
+         "uri" : "/users/:user_id/recommended_listings/rejects/:listing_ids",
+         "params" : {
+            "listing_ids" : "array(int)",
+            "user_id" : "user_id_or_name"
+         },
+         "type" : "Listing",
+         "http_method" : "POST"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : null,
+         "name" : "registerRecommendedListingViews",
+         "description" : "Register viewings of recommended listings. Affects future recommended listings.",
+         "uri" : "/users/:user_id/recommended_listings/views/:listing_ids",
+         "params" : {
+            "listing_ids" : "array(int)",
+            "user_id" : "user_id_or_name"
+         },
+         "type" : "Listing",
+         "http_method" : "POST"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllUserShippingTemplates",
+         "description" : "Retrieves a set of ShippingTemplate objects associated to a User.",
+         "uri" : "/users/:user_id/shipping/templates",
+         "params" : {
+            "limit" : "int",
+            "user_id" : "user_id_or_name",
+            "offset" : "int"
+         },
+         "type" : "ShippingTemplate",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllUserShops",
+         "description" : "Retrieves a set of Shop objects associated to a User.",
+         "uri" : "/users/:user_id/shops",
+         "params" : {
+            "limit" : "int",
+            "user_id" : "user_id_or_name",
+            "offset" : "int"
+         },
+         "type" : "Shop",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "private",
+         "defaults" : {
+            "limit" : 25,
+            "offset" : 0
+         },
+         "name" : "findAllUserBuyerTransactions",
+         "description" : "Retrieves a set of Transaction objects associated to a User.",
+         "uri" : "/users/:user_id/transactions",
+         "params" : {
+            "limit" : "int",
+            "user_id" : "user_id_or_name",
+            "offset" : "int"
+         },
+         "type" : "Transaction",
+         "http_method" : "GET"
+      },
+      {
+         "visibility" : "public",
+         "defaults" : {
+            "sort_order" : "down",
+            "sort_on" : "hotness",
+            "limit" : 25,
+            "maturity" : "safe_only",
+            "offset" : 0,
+            "detail_level" : "low"
+         },
+         "name" : "findAllUserTreasuries",
+         "description" : "Get a user's Treasuries",
+         "uri" : "/users/:user_id/treasuries",
+         "params" : {
+            "sort_order" : "enum(up, down)",
+            "sort_on" : "enum(hotness, created)",
+            "limit" : "int",
+            "user_id" : "user_id_or_name",
+            "maturity" : "enum(safe_only, safe_and_mature)",
+            "offset" : "int",
+            "detail_level" : "enum(low, medium)"
+         },
+         "type" : "Treasury",
+         "http_method" : "GET"
+      }
+   ]
+}
